@@ -1,0 +1,31 @@
+loglevel: info
+cpus: 1
+monitoring:
+  port: 5555
+ssl:
+  cert: "./certs/server.cert"
+  key: "./certs/server.key"
+  root_cert: "./certs/root.cert"
+protocols:
+  http:
+    enable: true
+    mocks_dir: "./mocks"
+    port: 8085
+cache:
+  enable: false
+  ttl_seconds: 300
+injection:
+  enable: false
+validation:
+  enable: false
+  schemas:
+    - type: OpenApi
+      url: https://raw.githubusercontent.com/OAI/OpenAPI-Specification/main/examples/v3.0/petstore.json
+# ext_helpers: "./custom_handlebar.json"
+# ext_data_source:
+#   pg:
+#     host: localhost
+#     port: 5432
+#     user: root
+#     password: password
+#     database: postgres
